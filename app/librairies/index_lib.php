@@ -1,7 +1,7 @@
-<?
+<?php
 	//Récupération du theme
 	$theme = $_COOKIE['theme'];
-	
+
 	//Connexion à la base de données
 	cBase();
 
@@ -26,7 +26,7 @@
 
 		echo '<link id="stylepage" rel="stylesheet" href="themes/' . $theme . '/style.css" type="text/css" media="screen" />'."\n";
 	}
-	
+
 	//Affichage du menu Caraudio
 	function affCaraudio()
 	{
@@ -35,14 +35,14 @@
 		$reponse = $bdd->query('SELECT * FROM youbiweb_album_structure WHERE catId=1 AND albumId=1 ORDER BY scatId DESC');
 
 		for ($i = 1;$donnees = $reponse->fetch();$i++)
-			echo '       <li><a title="'.$donnees['nom'].'" href="javascript:{ affChg(\'content\'); affPage(\'albums.php?catId=1&amp;scatId='.$donnees['scatId'].'\'); }">'.$donnees['nom'].'</a></li>'."\n";	
+			echo '       <li><a title="'.$donnees['nom'].'" href="javascript:{ affChg(\'content\'); affPage(\'albums.php?catId=1&amp;scatId='.$donnees['scatId'].'\'); }">'.$donnees['nom'].'</a></li>'."\n";
 	}
-	
+
 	//Affichage du menu Programmation
 	function affProgrammation()
 	{
 		global $bdd;
-		
+
 		$reponse = $bdd->query('SELECT * FROM youbiweb_prog_structure ORDER BY nom DESC');
 		$donnees = $reponse->fetch();
 		$nomFin = $donnees['nom'];
@@ -50,7 +50,7 @@
 		$reponse = $bdd->query('SELECT * FROM youbiweb_prog_structure ORDER BY nom ASC');
 
 		for ($i = 1;$donnees = $reponse->fetch();$i++)
-			echo '       <li><a title="'.$donnees['nom'].'" href="javascript:{ affChg(\'content\'); affPage(\'prog.php?langId='.$donnees['langId'].'\'); }">'.$donnees['nom'].'</a></li>'."\n";	
+			echo '       <li><a title="'.$donnees['nom'].'" href="javascript:{ affChg(\'content\'); affPage(\'prog.php?langId='.$donnees['langId'].'\'); }">'.$donnees['nom'].'</a></li>'."\n";
 	}
 
 	//Affichage du formulaire de changement de theme
@@ -63,7 +63,7 @@
 		for ($i = 1; $i < 6; $i++)
 			echo '<option '.(($themes[$i] == $theme) ? 'selected="selected" ' : '').'value="'.$themes[$i].'">'.ucfirst(strtolower(trim($themes[$i]))).'</option>';
 	}
-	
+
 	//Initialisation du menu
 	function initMenu()
 	{

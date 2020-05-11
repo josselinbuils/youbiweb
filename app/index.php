@@ -7,7 +7,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
   <?php include 'librairies/main_lib.php'; include 'librairies/index_lib.php'; chrgTheme(); ?>
   <script type="text/javascript" src="librairies/main_lib.js"></script>
- </head>                        
+ </head>
  <body onload="dTemps('index'); affChg('content'); affPage('accueil.php');">
   <div id="header"><div id="headerimg"><h1><a href="http://www.youbiweb.fr/">Youbiweb</a></h1></div></div>
   <div id="body">
@@ -18,7 +18,7 @@
      <li id="menuCaraudio" class="plie"><a title="Caraudio" href="javascript:menu('Caraudio');">Caraudio</a></li>
      <li class="sousmenu-list" id="sousMenuCaraudio">
 		  <ul>
-<? affCaraudio(); ?>
+<?php affCaraudio(); ?>
       </ul>
 		 </li>
      <li id="menuHifi" class="plie"><a title="Hifi" href="javascript:menu('Hifi');">Hifi</a></li>
@@ -36,7 +36,7 @@
 		 <li id="menuProgrammation" class="plie"><a title="Forum" href="javascript:{ menu('Programmation') }">Programmation</a></li>
      <li class="sousmenu-list" id="sousMenuProgrammation">
 		  <ul>
-<? affProgrammation(); ?>
+<?php affProgrammation(); ?>
       </ul>
      </li>
      <li><select id="themeForm" onChange="chgTheme(document.getElementById('themeForm').value.toLowerCase());" name="themes" size="1"><?php formThemes(); ?></select></li>

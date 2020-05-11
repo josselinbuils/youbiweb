@@ -222,8 +222,7 @@ if ( !$step || $step == 1 )
     {
         // We're gonna have to ask for the paths...
         echo 'Unfortunately CSSGen could not detect the following paths. Please input them and press &quot;submit&quot; to try again.';
-        echo "
-<form action=\"cssgen.php\" method=\"post\">";
+        echo ">";
         if ( $no_geshi_dot_php_error )
         {
             echo "
